@@ -448,6 +448,42 @@
         });
     });
 
+    // ===============================
+// VARIABLES NECESARIAS
+// ===============================
+const btnLimpiar = document.getElementById("btn-limpiar");
+const tablaBody = document.getElementById("tabla-body");
+const statsContainer = document.getElementById("stats-container");
+const errorMessage = document.getElementById("error-message");
+
+
+// ===============================
+// EVENTO: LIMPIAR
+// ===============================
+btnLimpiar.addEventListener("click", function () {
+
+    // Vaciar inputs
+    document.getElementById("ip-base").value = "";
+    document.getElementById("hosts").value = "";
+
+    // Restaurar tabla con mensaje inicial
+    tablaBody.innerHTML = `
+        <tr>
+            <td colspan="8" style="text-align: center; padding: 40px; color: #777;">
+                Ingrese los datos arriba y haga clic en "Calcular VLSM"
+            </td>
+        </tr>
+    `;
+
+    // Limpiar estadísticas
+    statsContainer.innerHTML = "";
+
+    // Ocultar mensaje de error
+    errorMessage.style.display = "none";
+});
+
+    
+
 </script>
 </body>
 </html>
